@@ -1,0 +1,14 @@
+{
+  "name": "gulp-doc",
+  "version": "1.0.0",
+  "description": "project by doc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Svetlana",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
