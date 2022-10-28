@@ -61,7 +61,7 @@ export const createToDoList = () => {
     function checkItem(event) {
         if(event.target.dataset.action !== 'done') return
         const parentNode = event.target.closest('.to-do-list__tasks-item');
-        const itemTitle = parentNode.querySelector('label[for=input-id]');
+        const itemTitle = parentNode.querySelector('.to-do-list__tasks-text');
         itemTitle.classList.toggle('to-do-list__tasks-item-done');
         const id = Number(parentNode.id);
 
@@ -90,11 +90,8 @@ export const createToDoList = () => {
     function renderItem(item) {
         const itemHTML = `
         <li id="${item.id}" class="to-do-list__tasks-item">
-            <div class="to-do-list__wrapper-complete">
-            <input id="input-id" type="checkbox">
-            <label for="input-id">${item.text}</label>
-            </div>
-            <input type="text">
+            <span class="to-do-list__tasks-text">${item.text}</span>
+            <input type="text" class="edit-item is-hidden">
             <button className="btn done" data-action="done">Done</button>
             <button className="btn edit" data-action="edit">Edit</button>
             <button className="btn delete" data-action="delete">Delete</button>
@@ -108,7 +105,23 @@ export const createToDoList = () => {
         localStorage.setItem('items', JSON.stringify(items))
     }
 
+    function editItem(event) {
+        if(event.target.dataset.action !== 'edit') return;
+        const parentNode = event.target.closest('.to-do-list__tasks-item');
+        const inputEdit = parentNode.querySelector('.edit-item');
+        const id = Number(parentNode.id);
+
+        const item = items.find((item) => item.id === id)
+        console.log(item, inputEdit)
+        if (item.id === id) {
+            inputEdit.classList.remove('is-hidden');
+            const newValue = inputEdit.value = item.text;
+            console.log(newValue);
+        }
+    }
+
     refs.toDoListForm.addEventListener('submit', addItem);
     refs.toDoListTasks.addEventListener('click', removeItem);
     refs.toDoListTasks.addEventListener('click', checkItem);
+    refs.toDoListTasks.addEventListener('click', editItem);
 }

@@ -29,6 +29,7 @@ const getPage = event => {
 
         case 'home':
             createHome();
+            createToDoList();
             break;
 
         default:
