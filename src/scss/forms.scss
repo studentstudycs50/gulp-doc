@@ -1,0 +1,50 @@
+form {
+  align-items: center;
+  box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 100px auto 50px;
+  padding: 50px;
+  width: 600px;
+}
+
+legend {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+input {
+  background-color: $color-white;
+  border: 1px solid $color-3--1;
+  border-radius: 4px;
+  color: $color-3--1;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0 0 20px;
+  min-height: 52px;
+  overflow: hidden;
+  padding: 0.81em 1.25em;
+}
+
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+
+li.to-do-list__tasks-item > input[type="text"] {
+  display: block;
+  width: 200px;
+}
+
+.to-do-list__wrapper-complete {
+  display: flex;
+}
+
+.to-do-list__container {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 20px;
+}
+

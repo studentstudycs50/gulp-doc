@@ -1,0 +1,11 @@
+@mixin size($width, $height: $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin on-event {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}

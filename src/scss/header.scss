@@ -1,0 +1,41 @@
+.header {
+  align-items: center;
+  display: flex;
+  min-height: 80px;
+  padding: 20px 0;
+
+  &-wrapper {
+    box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+    display: block;
+    width: 100%;
+  }
+
+  &-wrapper__container {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 20px;
+  }
+
+  &__logo {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex: 1 0 420px;
+    min-height: 90px;
+    padding: 0;
+  }
+
+  &__logo-img {
+    img {
+      @include size(420px, 90px);
+    }
+  }
+
+  &__auth {
+    align-content: center;
+    display: flex;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}

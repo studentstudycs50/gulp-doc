@@ -6,9 +6,38 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+
+<header class="header-wrapper">
+    <div class="header-wrapper__container">
+        <div class="header">
+            <div class="header__logo">
+                <div class="header__logo-img">
+                    <img src="./images/logo-todolist.svg" alt="logo header">
+                </div>
+            </div>
+            <div class="header__auth">
+                <button type="button" class="btn" data-page="home">Home page</button>
+                <button type="button" class="btn is-hidden" data-page="toDoList">To do list</button>
+                <button type="button" class="btn" data-page="signUp">Sign Up</button>
+                <button type="button" class="btn" data-page="signIn">Sign In</button>
+                <button type="button" class="logoutBtn btn is-hidden" data-page="logOut">logOut</button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="content"></div>
+<div class="loader-spiner"></div>
+<main class="site-content">
+    <div class="to-do-list__container">
+        <div class="to-do-list__wrapper-form"></div>
+        <h2>to do</h2>
+        <ul class="to-do-list__tasks">
+        </ul>
+    </div>
+</main>
 <script src="js/main.min.js"></script>
 </body>
 </html>

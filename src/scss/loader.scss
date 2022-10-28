@@ -1,0 +1,39 @@
+@keyframes loader-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-grow {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.loader-spiner {
+  @include size(30px);
+  display: none;
+  position: relative;
+
+  &.is-active {
+    display: block;
+  }
+
+  &::before {
+    animation: loader-rotate .75s linear infinite;
+    border: 2.5px solid yellow;
+    border-color: yellow;
+    border-radius: 50%;
+    border-right-color: rgba(0,0,0,0);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

@@ -18,7 +18,8 @@ function browsersync() {
     browserSync.init({
         server: {
             baseDir: 'dist/'
-        }
+        },
+        open: false
     });
 }
 
@@ -28,10 +29,10 @@ function scripts() {
         .pipe(webpackStream({
             mode: 'development',
             output: {
-                filename: './js/main.min.js'
+                filename: './main.min.js'
             }
         }))
-        .pipe(dest('./dist/'))
+        .pipe(dest('./dist/js/'))
         .pipe(browserSync.stream())
 }
 
@@ -66,23 +67,18 @@ function images() {
                 ]
             })
         ]))
-        .pipe(dest('./dist/images'))
+        .pipe(dest('./dist/images/'))
 }
 
-function build() {
-    return src ([
-        'src/css/style.min.css',
-        'src/fonts/**/*',
-        'src/js/main.min.js',
-        'src/*.html'
-    ], {base: 'src'})
-        .pipe(dest('dist'))
+function fonts() {
+    return src('src/fonts/**/*.*')
+        .pipe(dest('./dist/fonts/'))
 }
 
 function watching() {
     watch(['src/scss/**/*.scss'], styles);
-    watch(['src/js/**/*.js', '!src/js/main.min.js'], scripts);
-    watch(['src/*.html']).on('change', browserSync.reload);
+    watch(['src/js/**/*.js'], scripts);
+    watch(['src/*.html'], html);
 }
 
 function cleanDist() {
@@ -96,6 +92,7 @@ exports.scripts = scripts;
 exports.images = images;
 exports.cleanDist = cleanDist;
 exports.html = html;
+exports.fonts = fonts;
 
-exports.build = series(cleanDist, images, build);
-exports.default = parallel(html, styles, scripts, browsersync, watching);
+exports.build = series(cleanDist, images);
+exports.default = parallel(fonts, html, styles, scripts, browsersync, watching);
