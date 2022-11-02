@@ -28,7 +28,6 @@ const signIn = async user => {
    refs.loader.classList.toggle('is-active');
    try {
       const response = await axios.post(signInURL, { ...user, returnSecureToken: true });
-      console.log(response);
       localStorage.setItem('idToken', JSON.stringify(response.data.idToken));
       getFromDB();
    } catch (error) {

@@ -1,0 +1,14 @@
+.heading {
+  &__wrapper {
+    @extend %container;
+  }
+
+  &__title {
+    align-items: center;
+    color: $color-black;
+    font-size: 7.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+  }
+}

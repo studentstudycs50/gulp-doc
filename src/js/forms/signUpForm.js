@@ -15,12 +15,14 @@ export const createSignUpForm = () => {
     }
 
     refs.content.innerHTML = `
-    <form name="signUpForm">
-    <legend>Sign Up Form</legend>
+    <form class="form" name="signUpForm">
+    <fieldset class="form__fieldset">
+    <label>Sign Up Form</label>
         <input type="text" name="email" placeholder="E-mail">
         <input type="text" name="password" placeholder="Password">
         <span class="error"></span>
         <button type="submit" class="btn is-centered">Sign Up</button>
+        </fieldset>
     </form>
     `
 

@@ -4,10 +4,10 @@ export const refs = {
     signInForm: document.forms.signInForm,
     logoutBtn: document.querySelector('.logoutBtn'),
     loader: document.querySelector('.loader-spiner'),
-    errorSignIn: document.querySelector('.errorSignIn'),
     content: document.querySelector('.content'),
+    siteContent: document.querySelector('.site-content'),
     navigation: document.querySelector('.header__auth'),
-    toDoListWrapper: document.querySelector('.to-do-list__wrapper-form'),
-    toDoListTasks: document.querySelector('.to-do-list__tasks'),
+    toDoListWrapper: document.querySelector('.to-do-list__wrapper'),
+    toDoListTasks: document.querySelector('.to-do-list__items'),
     toDoListForm: document.forms.toDoListForm,
 }

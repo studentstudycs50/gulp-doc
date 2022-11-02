@@ -1,0 +1,16 @@
+%container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 40px;
+  width: 100%;
+
+  @include breakpoint(small down) {
+    padding: 0 20px;
+  }
+}
+
+
+.container {
+  @extend %container;
+}
